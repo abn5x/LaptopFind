@@ -12,7 +12,7 @@
     <div id="searchPanel">
         <nav id="navBar">
             <ul>
-                <li id="logo"><a href="index.html">LaptopFound</a></li>
+                <li id="logo"><a href="index.html">LaptopFind</a></li>
                 <li>Trending laptops</li>
                 <li>Best in category</li>
             </ul>
@@ -36,8 +36,8 @@
             <div class="panel" :class="{ active: isActive, }">
                 <div class="panel__filter-menu" :class="{'active-item': false}">
                     <div class="panel__filter" v-for="(filter, index) in filters">
-                        <h2 v-on:click="expandFilter(index)" :class="{'panel__filter--expanded': filter.isExpanded}">
-                            {{filter.title}}</h2>
+                        <h2 v-on:click="expandFilter(index)"
+                        :class="{'panel__filter--expanded': filter.isExpanded}">{{filter.title}}</h2>
                         <div class="chevron" v-on:click="expandFilter(index)"
                             :class="{'panel__filter--expanded': filter.isExpanded}"></div>
                         <div v-if="filter.isExpanded" v-for="innerFilter in innerFilters[index]"
@@ -59,8 +59,7 @@
                     </div>
                     <div class="panel__content panel__content--sub" :class="{'active-item': isActive}">
                         <div class="panel__item" v-for="item in mostSearched">
-                            <div class="addCompare" :class="{'addCompare--active': compareList.indexOf(item.name) >= 0}"
-                                v-on:click="addToCompare(item.name)"></div>
+                            <div class="addCompare" :class="{'addCompare--active': compareList.indexOf(item.name) >= 0}" v-on:click="addToCompare(item.name)"></div>
                             <div class="imgContainer">
                                 <img :src="item.imageUrl" :alt="item.name">
                             </div>
